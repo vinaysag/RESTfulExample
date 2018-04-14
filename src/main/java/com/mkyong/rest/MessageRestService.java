@@ -13,7 +13,7 @@ public class MessageRestService {
 	@Path("/{param}")
 	public Response printMessage(@PathParam("param") String msg) {
 
-		String result = "Restful example : " + msg;
+		String result = "Restful example : " + msg + " - triggered through Github Webhook and jenkins";
 
 		return Response.status(200).entity(result).build();
 
