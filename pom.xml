@@ -44,5 +44,16 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+	    <repository>
+	        <id>central</id>
+	        <name>HYDHTC99543L-releases</name>
+	        <url>http://192.168.0.12:8081/artifactory/myrepo</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>snapshots</id>
+	        <name>HYDHTC99543L-snapshots</name>
+	        <url>http://192.168.0.12:8081/artifactory/myrepo</url>
+	    </snapshotRepository>
+	</distributionManagement>
 </project>
