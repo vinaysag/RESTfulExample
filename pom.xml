@@ -4,7 +4,7 @@
 	<groupId>com.mkyong.common</groupId>
 	<artifactId>RESTfulExample</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<name>RESTfulExample Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
@@ -36,12 +36,44 @@
 		<finalName>RESTfulExample</finalName>
 		<plugins>
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-compiler-plugin</artifactId>
+		      <version>2.3.2</version>
+		      <configuration>
+		        <source>1.6</source>
+		        <target>1.6</target>
+		        <encoding>UTF-8</encoding>
+		      </configuration>
+		    </plugin>
+		     <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+             <version>2.6</version>
+        </plugin>
+        <plugin>
+  <groupId>org.codehaus.cargo</groupId>
+  <artifactId>cargo-maven2-plugin</artifactId>
+  <version>1.2.0</version>
+  <configuration>
+    <container>
+      <containerId>jboss51x</containerId>
+      <home>C:\java\jboss_upgrade</home>
+       <timeout>600000</timeout>
+        <append>false</append>
+    </container>
+    <configuration>
+      <type>existing</type>
+      <home>C:\java\jboss_upgrade\standalone\deployments</home>
+      <properties>
+       <cargo.servlet.port>8090</cargo.servlet.port>
+       <cargo.jboss.configuration>default</cargo.jboss.configuration>
+        <cargo.hostname>localhost</cargo.hostname>
+        <cargo.rmi.port>1099</cargo.rmi.port>
+      </properties>
+    </configuration>
+  </configuration>
+
+  </plugin> 
 		</plugins>
 	</build>
 	<distributionManagement>
